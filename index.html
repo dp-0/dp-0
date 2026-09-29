@@ -1,0 +1,1864 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dinesh Phuyel — PHP / Laravel Developer</title>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <meta
+            name="description"
+            content="PHP/Laravel developer specialising in real-time systems, multi-tenant applications, and open-source tools. Based in Kathmandu, Nepal."
+        />
+        <meta
+            name="keywords"
+            content="Dinesh Phuyel, PHP Developer, Laravel Developer, Backend Engineer, Kathmandu, Nepal, FilamentPHP, Livewire, Open Source"
+        />
+        <meta name="author" content="Dinesh Phuyel" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dineshphuyel.com.np/" />
+        <meta
+            property="og:title"
+            content="Dinesh Phuyel — PHP / Laravel Developer"
+        />
+        <meta
+            property="og:description"
+            content="PHP/Laravel developer specialising in real-time systems, multi-tenant applications, and open-source tools."
+        />
+        <meta
+            property="og:image"
+            content="https://dineshphuyel.com.np/logo.png"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://dineshphuyel.com.np/" />
+        <meta
+            property="twitter:title"
+            content="Dinesh Phuyel — PHP / Laravel Developer"
+        />
+        <meta
+            property="twitter:description"
+            content="PHP/Laravel developer specialising in real-time systems, multi-tenant applications, and open-source tools."
+        />
+        <meta
+            property="twitter:image"
+            content="https://dineshphuyel.com.np/logo.png"
+        />
+        <link rel="canonical" href="https://dineshphuyel.com.np/" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Dinesh Phuyel",
+                "url": "https://dineshphuyel.com.np/",
+                "jobTitle": "PHP / Laravel Developer",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Kathmandu",
+                    "addressCountry": "Nepal"
+                },
+                "sameAs": [
+                    "https://github.com/dp-0",
+                    "https://linkedin.com/in/dineshphuyel"
+                ]
+            }
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Lora:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body>
+        <nav class="nav-glass fixed top-0 left-0 right-0 z-50">
+            <div
+                style="
+                    max-width: 1152px;
+                    margin: 0 auto;
+                    padding: 0 24px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                "
+            >
+                <a
+                    href="#hero"
+                    style="cursor: pointer; display: flex; align-items: center"
+                >
+                    <img
+                        src="logo.png"
+                        alt="Dinesh Phuyel Logo"
+                        style="height: 32px; width: auto"
+                    />
+                </a>
+                <div
+                    style="display: flex; align-items: center; gap: 32px"
+                    class="hidden md:flex"
+                >
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#opensource" class="nav-link">Open Source</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a
+                        href="#contact"
+                        class="btn btn-primary"
+                        style="font-size: 14px; padding: 8px 18px"
+                        >Hire Me</a
+                    >
+                </div>
+                <button
+                    id="menu-btn"
+                    onclick="toggleMenu()"
+                    aria-label="Toggle menu"
+                    class="md:hidden"
+                    style="
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        color: var(--muted);
+                    "
+                >
+                    <svg
+                        id="icon-open"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <line x1="4" y1="6" x2="20" y2="6" />
+                        <line x1="4" y1="12" x2="20" y2="12" />
+                        <line x1="4" y1="18" x2="20" y2="18" />
+                    </svg>
+                    <svg
+                        id="icon-close"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        style="display: none"
+                    >
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu">
+                <a
+                    href="#skills"
+                    onclick="closeMenu()"
+                    class="nav-link"
+                    style="padding: 10px 0"
+                    >Skills</a
+                >
+                <a
+                    href="#experience"
+                    onclick="closeMenu()"
+                    class="nav-link"
+                    style="padding: 10px 0"
+                    >Experience</a
+                >
+                <a
+                    href="#opensource"
+                    onclick="closeMenu()"
+                    class="nav-link"
+                    style="padding: 10px 0"
+                    >Open Source</a
+                >
+                <a
+                    href="#projects"
+                    onclick="closeMenu()"
+                    class="nav-link"
+                    style="padding: 10px 0"
+                    >Projects</a
+                >
+                <a
+                    href="#contact"
+                    onclick="closeMenu()"
+                    class="btn btn-primary"
+                    style="
+                        margin-top: 8px;
+                        width: fit-content;
+                        font-size: 14px;
+                        padding: 10px 20px;
+                    "
+                    >Hire Me</a
+                >
+            </div>
+        </nav>
+
+        <div
+            class="bottom-nav"
+            role="navigation"
+            aria-label="Mobile navigation"
+        >
+            <a
+                href="#skills"
+                class="bottom-nav-item"
+                data-target="skills"
+                aria-label="Skills"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                </svg>
+                <span class="nav-label">Skills</span>
+            </a>
+            <a
+                href="#experience"
+                class="bottom-nav-item"
+                data-target="experience"
+                aria-label="Experience"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                <span class="nav-label">Work</span>
+            </a>
+            <a
+                href="#opensource"
+                class="bottom-nav-item"
+                data-target="opensource"
+                aria-label="Open Source"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
+                    />
+                    <path d="M8 10l4 4 4-4" />
+                    <path d="M12 14V6" />
+                </svg>
+                <span class="nav-label">OSS</span>
+            </a>
+            <a
+                href="#projects"
+                class="bottom-nav-item"
+                data-target="projects"
+                aria-label="Projects"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                    />
+                </svg>
+                <span class="nav-label">Projects</span>
+            </a>
+            <a
+                href="#contact"
+                class="bottom-nav-item"
+                data-target="contact"
+                aria-label="Contact"
+                style="color: var(--accent-light)"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    />
+                    <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <span class="nav-label" style="color: var(--accent-light)"
+                    >Hire</span
+                >
+            </a>
+        </div>
+
+        <div class="bottom-nav-spacer"></div>
+
+        <section
+            id="hero"
+            style="
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+                padding: 120px 0 80px;
+            "
+        >
+            <div class="hero-dots"></div>
+            <div
+                style="
+                    max-width: 1152px;
+                    margin: 0 auto;
+                    padding: 0 24px;
+                    width: 100%;
+                "
+            >
+                <div style="max-width: 700px">
+                    <div
+                        class="avail-badge"
+                        style="margin-bottom: 24px; width: fit-content"
+                    >
+                        <div class="pulse"></div>
+                        Available for freelance &amp; full-time
+                    </div>
+                    <p class="section-tag" style="margin-bottom: 10px">
+                        Hi, I'm
+                    </p>
+                    <h1
+                        style="
+                            font-family: &quot;Lora&quot;, serif;
+                            font-weight: 700;
+                            font-size: clamp(50px, 8.5vw, 84px);
+                            line-height: 1.07;
+                            letter-spacing: -0.01em;
+                            color: var(--text);
+                            margin-bottom: 12px;
+                        "
+                    >
+                        Dinesh<br />Phuyel
+                    </h1>
+                    <p
+                        style="
+                            font-family: &quot;Space Grotesk&quot;, sans-serif;
+                            font-size: clamp(20px, 3vw, 28px);
+                            color: var(--accent-light);
+                            font-weight: 500;
+                            letter-spacing: -0.01em;
+                            margin-bottom: 20px;
+                        "
+                    >
+                        PHP / Laravel Developer
+                    </p>
+                    <p
+                        style="
+                            font-size: 17px;
+                            color: var(--muted);
+                            line-height: 1.75;
+                            max-width: 540px;
+                            margin-bottom: 36px;
+                        "
+                    >
+                        Building scalable backend systems, real-time
+                        applications, and open-source tools for the Laravel
+                        ecosystem. Based in Kathmandu, Nepal.
+                    </p>
+                    <div
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 12px;
+                            margin-bottom: 40px;
+                        "
+                    >
+                        <a href="#experience" class="btn btn-primary">
+                            View My Work
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="15"
+                                height="15"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a
+                            href="Dinesh phuyel cv.pdf"
+                            target="_blank"
+                            class="btn btn-secondary"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="15"
+                                height="15"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            Download CV
+                        </a>
+                        <a
+                            href="https://github.com/dp-0"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-secondary"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="15"
+                                height="15"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                                />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                    <div
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 20px;
+                            color: var(--dim);
+                            font-size: 14px;
+                        "
+                    >
+                        <span
+                            style="display: flex; align-items: center; gap: 7px"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="13"
+                                height="13"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            Kathmandu, Nepal
+                        </span>
+                        <span
+                            style="display: flex; align-items: center; gap: 7px"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="13"
+                                height="13"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect
+                                    x="2"
+                                    y="7"
+                                    width="20"
+                                    height="14"
+                                    rx="2"
+                                />
+                                <path
+                                    d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
+                                />
+                            </svg>
+                            3+ years experience
+                        </span>
+                        <span
+                            style="display: flex; align-items: center; gap: 7px"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="13"
+                                height="13"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                />
+                            </svg>
+                            Open source author
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="
+                    position: absolute;
+                    bottom: 32px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 6px;
+                    color: var(--dim);
+                    font-size: 11px;
+                    letter-spacing: 0.12em;
+                    text-transform: uppercase;
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                "
+            >
+                <span>Scroll</span>
+                <svg
+                    class="bounce"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M12 5v14M5 12l7 7 7-7" />
+                </svg>
+            </div>
+        </section>
+
+        <section
+            id="skills"
+            style="background: var(--surface); padding: 80px 0"
+        >
+            <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
+                <div class="reveal">
+                    <p class="section-tag">What I work with</p>
+                    <h2 class="section-title">Skills &amp; Technologies</h2>
+                </div>
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(
+                            auto-fit,
+                            minmax(260px, 1fr)
+                        );
+                        gap: 40px;
+                    "
+                >
+                    <div class="reveal">
+                        <p
+                            style="
+                                font-size: 12px;
+                                color: var(--dim);
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                                font-family:
+                                    &quot;JetBrains Mono&quot;, monospace;
+                                margin-bottom: 14px;
+                            "
+                        >
+                            Languages &amp; Frameworks
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                            <span class="skill-badge">PHP</span>
+                            <span class="skill-badge">Laravel</span>
+                            <span class="skill-badge">Livewire</span>
+                            <span class="skill-badge">FilamentPHP</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <p
+                            style="
+                                font-size: 12px;
+                                color: var(--dim);
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                                font-family:
+                                    &quot;JetBrains Mono&quot;, monospace;
+                                margin-bottom: 14px;
+                            "
+                        >
+                            Databases &amp; Caching
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                            <span class="skill-badge">MySQL</span>
+                            <span class="skill-badge">Redis</span>
+                            <span class="skill-badge">Query Optimization</span>
+                            <span class="skill-badge">Cache Locking</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <p
+                            style="
+                                font-size: 12px;
+                                color: var(--dim);
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                                font-family:
+                                    &quot;JetBrains Mono&quot;, monospace;
+                                margin-bottom: 14px;
+                            "
+                        >
+                            Real-time &amp; APIs
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                            <span class="skill-badge">Laravel WebSockets</span>
+                            <span class="skill-badge">REST APIs</span>
+                            <span class="skill-badge">HTTP Pools</span>
+                            <span class="skill-badge">API Integration</span>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <p
+                            style="
+                                font-size: 12px;
+                                color: var(--dim);
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                                font-family:
+                                    &quot;JetBrains Mono&quot;, monospace;
+                                margin-bottom: 14px;
+                            "
+                        >
+                            Tools
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                            <span class="skill-badge">Git</span>
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">WordPress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" style="padding: 80px 0">
+            <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
+                <div class="reveal">
+                    <p class="section-tag">Where I've worked</p>
+                    <h2 class="section-title">Experience</h2>
+                </div>
+                <div
+                    style="
+                        max-width: 720px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 48px;
+                    "
+                >
+                    <div class="tl-item reveal">
+                        <div
+                            style="
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                gap: 8px;
+                                margin-bottom: 14px;
+                            "
+                        >
+                            <div>
+                                <h3
+                                    style="
+                                        font-family:
+                                            &quot;Space Grotesk&quot;,
+                                            sans-serif;
+                                        font-weight: 600;
+                                        font-size: 20px;
+                                        color: var(--text);
+                                    "
+                                >
+                                    Studio Matrix
+                                </h3>
+                                <p
+                                    style="
+                                        color: var(--accent-light);
+                                        font-size: 15px;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    PHP Developer
+                                </p>
+                            </div>
+                            <div style="text-align: right">
+                                <p
+                                    style="
+                                        font-family:
+                                            &quot;JetBrains Mono&quot;,
+                                            monospace;
+                                        font-size: 13px;
+                                        color: var(--dim);
+                                    "
+                                >
+                                    Jul 2024 – Present
+                                </p>
+                                <p
+                                    style="
+                                        font-size: 13px;
+                                        color: var(--dim);
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    Kathmandu, Nepal
+                                </p>
+                            </div>
+                        </div>
+                        <ul
+                            style="
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                list-style: none;
+                            "
+                        >
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.65;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        flex-shrink: 0;
+                                        margin-top: 1px;
+                                    "
+                                    >—</span
+                                >Built a real-time campaign platform with
+                                Laravel WebSockets, delivering live winner
+                                announcements to 1,000+ concurrent participants
+                                with sub-second latency
+                            </li>
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.65;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        flex-shrink: 0;
+                                        margin-top: 1px;
+                                    "
+                                    >—</span
+                                >Engineered a lottery-style campaign engine with
+                                external API integrations, automating entry
+                                submission and result processing end-to-end
+                            </li>
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.65;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        flex-shrink: 0;
+                                        margin-top: 1px;
+                                    "
+                                    >—</span
+                                >Maintained LWF, a multi-tenant tender
+                                management platform serving 6+ client
+                                organizations across bidding, evaluation, and
+                                approval workflows
+                            </li>
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.65;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        flex-shrink: 0;
+                                        margin-top: 1px;
+                                    "
+                                    >—</span
+                                >Delivered admin dashboards using FilamentPHP,
+                                reducing internal tool development time across
+                                multiple feature cycles
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tl-item reveal">
+                        <div
+                            style="
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                gap: 8px;
+                                margin-bottom: 14px;
+                            "
+                        >
+                            <div>
+                                <h3
+                                    style="
+                                        font-family:
+                                            &quot;Space Grotesk&quot;,
+                                            sans-serif;
+                                        font-weight: 600;
+                                        font-size: 20px;
+                                        color: var(--text);
+                                    "
+                                >
+                                    Velox Labs
+                                </h3>
+                                <p
+                                    style="
+                                        color: var(--accent-light);
+                                        font-size: 15px;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    PHP Developer
+                                </p>
+                            </div>
+                            <div style="text-align: right">
+                                <p
+                                    style="
+                                        font-family:
+                                            &quot;JetBrains Mono&quot;,
+                                            monospace;
+                                        font-size: 13px;
+                                        color: var(--dim);
+                                    "
+                                >
+                                    Mar 2024 – Jul 2024
+                                </p>
+                                <p
+                                    style="
+                                        font-size: 13px;
+                                        color: var(--dim);
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    Kathmandu, Nepal
+                                </p>
+                            </div>
+                        </div>
+                        <ul
+                            style="
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                list-style: none;
+                            "
+                        >
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.65;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        flex-shrink: 0;
+                                        margin-top: 1px;
+                                    "
+                                    >—</span
+                                >Implemented Redis-backed cache locking in
+                                Laravel to eliminate race conditions during
+                                concurrent writes, ensuring zero data corruption
+                                under high-concurrency load
+                            </li>
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.65;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        flex-shrink: 0;
+                                        margin-top: 1px;
+                                    "
+                                    >—</span
+                                >Built a configurable payroll engine with
+                                real-time overtime and break-time rules,
+                                automating salary calculations for 100+
+                                employees and eliminating manual payroll errors
+                            </li>
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.65;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        flex-shrink: 0;
+                                        margin-top: 1px;
+                                    "
+                                    >—</span
+                                >Reduced external API latency by parallelizing
+                                HTTP calls with Laravel's HTTP pool, cutting
+                                data retrieval time across multiple third-party
+                                integrations
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tl-item reveal">
+                        <div
+                            style="
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                gap: 8px;
+                                margin-bottom: 14px;
+                            "
+                        >
+                            <div>
+                                <h3
+                                    style="
+                                        font-family:
+                                            &quot;Space Grotesk&quot;,
+                                            sans-serif;
+                                        font-weight: 600;
+                                        font-size: 20px;
+                                        color: var(--text);
+                                    "
+                                >
+                                    Crystal Solution
+                                </h3>
+                                <p
+                                    style="
+                                        color: var(--accent-light);
+                                        font-size: 15px;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    PHP Developer
+                                </p>
+                            </div>
+                            <div style="text-align: right">
+                                <p
+                                    style="
+                                        font-family:
+                                            &quot;JetBrains Mono&quot;,
+                                            monospace;
+                                        font-size: 13px;
+                                        color: var(--dim);
+                                    "
+                                >
+                                    Jul 2022 – Apr 2023
+                                </p>
+                                <p
+                                    style="
+                                        font-size: 13px;
+                                        color: var(--dim);
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    Birtamode, Nepal
+                                </p>
+                            </div>
+                        </div>
+                        <ul
+                            style="
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                list-style: none;
+                            "
+                        >
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.65;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        flex-shrink: 0;
+                                        margin-top: 1px;
+                                    "
+                                    >—</span
+                                >Refactored a legacy School ERP system,
+                                modernising the architecture and delivering
+                                student management, fee collection, and library
+                                modules
+                            </li>
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.65;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        flex-shrink: 0;
+                                        margin-top: 1px;
+                                    "
+                                    >—</span
+                                >Built a Fee Collection System with automated
+                                payment tracking, receipt generation, and
+                                financial reporting, replacing manual
+                                record-keeping
+                            </li>
+                            <li
+                                style="
+                                    display: flex;
+                                    gap: 12px;
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.65;
+                                "
+                            >
+                                <span
+                                    style="
+                                        color: var(--accent);
+                                        flex-shrink: 0;
+                                        margin-top: 1px;
+                                    "
+                                    >—</span
+                                >Implemented automated fine and rebate
+                                calculation for library and fee management,
+                                removing error-prone manual computation
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="opensource"
+            style="background: var(--surface); padding: 80px 0"
+        >
+            <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
+                <div class="reveal">
+                    <p class="section-tag">Built for the community</p>
+                    <h2 class="section-title">Open Source</h2>
+                </div>
+                <div
+                    class="card-featured reveal"
+                    style="padding: 36px; margin-bottom: 20px"
+                >
+                    <div
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            align-items: flex-start;
+                            gap: 16px;
+                            margin-bottom: 20px;
+                        "
+                    >
+                        <div>
+                            <div
+                                style="
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 12px;
+                                    margin-bottom: 8px;
+                                "
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="var(--accent-light)"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                                    />
+                                </svg>
+                                <h3
+                                    style="
+                                        font-family:
+                                            &quot;Space Grotesk&quot;,
+                                            sans-serif;
+                                        font-weight: 700;
+                                        font-size: 22px;
+                                        color: var(--text);
+                                    "
+                                >
+                                    Filament Sanchaya
+                                </h3>
+                                <span class="badge-new">New</span>
+                            </div>
+                            <p
+                                style="
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.7;
+                                    max-width: 560px;
+                                "
+                            >
+                                A Filament-native file manager and media picker
+                                for Laravel — filling a gap in the FilamentPHP
+                                ecosystem. <em>Sanchaya</em> (सञ्चय) means
+                                "gathering something valuable" in Nepali.
+                            </p>
+                        </div>
+                        <a
+                            href="https://github.com/dp-0/filament-sanchaya"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-secondary btn-sm"
+                            style="flex-shrink: 0"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                                />
+                            </svg>
+                            View on GitHub
+                        </a>
+                    </div>
+                    <div class="code-block" style="margin-bottom: 20px">
+                        <span class="prompt">$</span>
+                        <span>composer require dp0/filament-sanchaya</span>
+                    </div>
+                    <div
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 8px;
+                            margin-bottom: 28px;
+                        "
+                    >
+                        <span class="tech-tag">PHP 8.4</span>
+                        <span class="tech-tag">Laravel 13</span>
+                        <span class="tech-tag">Filament 5</span>
+                        <span class="tech-tag">Livewire</span>
+                    </div>
+                    <div
+                        style="
+                            border-top: 1px solid rgba(63, 63, 70, 0.5);
+                            padding-top: 24px;
+                            display: grid;
+                            grid-template-columns: repeat(
+                                auto-fit,
+                                minmax(260px, 1fr)
+                            );
+                            gap: 12px;
+                        "
+                    >
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Full-featured
+                            file manager with folder tree navigation
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Multi-disk
+                            support with cursor-based pagination
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Cross-disk move
+                            &amp; copy with on-the-fly ZIP streaming
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Reusable
+                            MediaPicker field with polymorphic attachments
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Authorization
+                            via Laravel Gates with swappable policy
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Independently
+                            configurable, replaceable action classes
+                        </div>
+                    </div>
+                </div>
+                <div class="card reveal" style="padding: 24px; opacity: 0.65">
+                    <div
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            align-items: flex-start;
+                            gap: 12px;
+                        "
+                    >
+                        <div>
+                            <div
+                                style="
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    margin-bottom: 6px;
+                                "
+                            >
+                                <h3
+                                    style="
+                                        font-family:
+                                            &quot;Space Grotesk&quot;,
+                                            sans-serif;
+                                        font-weight: 600;
+                                        font-size: 18px;
+                                        color: var(--text);
+                                    "
+                                >
+                                    User Activity Package
+                                </h3>
+                                <span class="badge-archived">archived</span>
+                            </div>
+                            <p
+                                style="
+                                    color: var(--muted);
+                                    font-size: 14px;
+                                    line-height: 1.6;
+                                    max-width: 500px;
+                                "
+                            >
+                                Laravel package for granular user activity
+                                tracking — logs logins, logouts, and model-level
+                                changes with filterable audit trails by user,
+                                model, action, and timestamp.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 6px;
+                                    margin-top: 12px;
+                                "
+                            >
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">Livewire</span>
+                            </div>
+                        </div>
+                        <a
+                            href="https://github.com/dp-0"
+                            target="_blank"
+                            rel="noopener"
+                            class="btn btn-secondary btn-sm"
+                            style="flex-shrink: 0"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="13"
+                                height="13"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                                />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" style="padding: 80px 0">
+            <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
+                <div class="reveal">
+                    <p class="section-tag">What I've shipped</p>
+                    <h2 class="section-title">Projects</h2>
+                </div>
+                <div
+                    style="
+                        display: grid;
+                        grid-template-columns: repeat(
+                            auto-fit,
+                            minmax(280px, 1fr)
+                        );
+                        gap: 20px;
+                    "
+                >
+                    <div class="card reveal" style="padding: 24px">
+                        <div
+                            style="
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                gap: 10px;
+                                margin-bottom: 10px;
+                            "
+                        >
+                            <h3
+                                style="
+                                    font-family:
+                                        &quot;Space Grotesk&quot;, sans-serif;
+                                    font-weight: 600;
+                                    font-size: 18px;
+                                    color: var(--text);
+                                "
+                            >
+                                somluitel.com.np
+                            </h3>
+                            <a
+                                href="https://somluitel.com.np"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="Visit somluitel.com.np"
+                                style="
+                                    color: var(--dim);
+                                    cursor: pointer;
+                                    transition: color 0.2s;
+                                "
+                                onmouseover="
+                                    this.style.color = 'var(--accent-light)'
+                                "
+                                onmouseout="this.style.color = 'var(--dim)'"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="17"
+                                    height="17"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path
+                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                    />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                            </a>
+                        </div>
+                        <p
+                            style="
+                                color: var(--muted);
+                                font-size: 14px;
+                                line-height: 1.65;
+                                margin-bottom: 16px;
+                            "
+                        >
+                            Production CMS-based portfolio and blog for a
+                            financial professional — includes gallery,
+                            testimonial management, and an insurance premium
+                            calculator. Fully client-manageable with no
+                            developer involvement needed.
+                        </p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">CMS</span>
+                        </div>
+                    </div>
+                    <div
+                        class="card reveal"
+                        style="
+                            padding: 24px;
+                            border-style: dashed;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            min-height: 180px;
+                        "
+                    >
+                        <div style="text-align: center">
+                            <p
+                                style="
+                                    color: var(--dim);
+                                    font-size: 14px;
+                                    font-family:
+                                        &quot;JetBrains Mono&quot;, monospace;
+                                    margin-bottom: 10px;
+                                "
+                            >
+                                More coming soon
+                            </p>
+                            <a
+                                href="https://github.com/dp-0"
+                                target="_blank"
+                                rel="noopener"
+                                style="
+                                    color: var(--accent-light);
+                                    font-size: 13px;
+                                    text-decoration: none;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    gap: 6px;
+                                    transition: opacity 0.2s;
+                                "
+                                onmouseover="this.style.opacity = '0.7'"
+                                onmouseout="this.style.opacity = '1'"
+                            >
+                                See GitHub for more
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="13"
+                                    height="13"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            id="education"
+            style="background: var(--surface); padding: 80px 0"
+        >
+            <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
+                <div class="reveal">
+                    <p class="section-tag">Academic background</p>
+                    <h2 class="section-title">Education</h2>
+                </div>
+                <div
+                    style="
+                        max-width: 680px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                    "
+                >
+                    <div class="card reveal" style="padding: 24px">
+                        <div
+                            style="
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                gap: 8px;
+                            "
+                        >
+                            <div>
+                                <h3
+                                    style="
+                                        font-family:
+                                            &quot;Space Grotesk&quot;,
+                                            sans-serif;
+                                        font-weight: 600;
+                                        font-size: 18px;
+                                        color: var(--text);
+                                    "
+                                >
+                                    Master of Information Technology (MIT)
+                                </h3>
+                                <p
+                                    style="
+                                        color: var(--muted);
+                                        font-size: 14px;
+                                        margin-top: 4px;
+                                    "
+                                >
+                                    Patan Multiple Campus, Lalitpur
+                                </p>
+                            </div>
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-end;
+                                    gap: 6px;
+                                "
+                            >
+                                <span
+                                    style="
+                                        font-family:
+                                            &quot;JetBrains Mono&quot;,
+                                            monospace;
+                                        font-size: 13px;
+                                        color: var(--accent-light);
+                                    "
+                                    >Feb 2025 – Present</span
+                                >
+                                <span class="badge-ongoing">Ongoing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card reveal" style="padding: 24px">
+                        <div
+                            style="
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                gap: 8px;
+                            "
+                        >
+                            <div>
+                                <h3
+                                    style="
+                                        font-family:
+                                            &quot;Space Grotesk&quot;,
+                                            sans-serif;
+                                        font-weight: 600;
+                                        font-size: 18px;
+                                        color: var(--text);
+                                    "
+                                >
+                                    Bachelor in Computer Application (BCA)
+                                </h3>
+                                <p
+                                    style="
+                                        color: var(--muted);
+                                        font-size: 14px;
+                                        margin-top: 4px;
+                                    "
+                                >
+                                    Mechi Multiple Campus, Bhadrapur, Jhapa
+                                </p>
+                            </div>
+                            <span
+                                style="
+                                    font-family:
+                                        &quot;JetBrains Mono&quot;, monospace;
+                                    font-size: 13px;
+                                    color: var(--dim);
+                                "
+                                >Aug 2019 – Feb 2024</span
+                            >
+                        </div>
+                    </div>
+                    <div
+                        class="reveal"
+                        style="
+                            padding: 20px 0;
+                            border-top: 1px solid var(--border);
+                        "
+                    >
+                        <p
+                            style="
+                                font-size: 12px;
+                                color: var(--dim);
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                                font-family:
+                                    &quot;JetBrains Mono&quot;, monospace;
+                                margin-bottom: 14px;
+                            "
+                        >
+                            Certifications
+                        </p>
+                        <div
+                            style="
+                                display: flex;
+                                align-items: center;
+                                gap: 12px;
+                            "
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="var(--accent)"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <circle cx="12" cy="8" r="6" />
+                                <path
+                                    d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"
+                                />
+                            </svg>
+                            <span style="color: var(--muted); font-size: 15px"
+                                >Docker Essentials: A Developer Introduction
+                                &mdash;
+                                <span style="color: var(--dim)"
+                                    >IBM SkillsBuild</span
+                                ></span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="padding: 80px 0">
+            <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
+                <div class="reveal" style="max-width: 580px">
+                    <p class="section-tag">Get in touch</p>
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <p
+                        style="
+                            color: var(--muted);
+                            font-size: 17px;
+                            line-height: 1.75;
+                            margin-bottom: 36px;
+                        "
+                    >
+                        Open to backend roles, remote freelance projects, and
+                        Laravel consulting. If you're building something with
+                        PHP/Laravel or need help with the FilamentPHP ecosystem,
+                        reach out.
+                    </p>
+                </div>
+                <div
+                    style="
+                        max-width: 580px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+                    "
+                >
+                    <a
+                        href="mailto:dineshphuyel20@gmail.com"
+                        class="card contact-row reveal"
+                        style="color: var(--text)"
+                    >
+                        <div class="contact-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="var(--accent-light)"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div style="flex: 1">
+                            <p
+                                style="
+                                    font-size: 11px;
+                                    color: var(--dim);
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.1em;
+                                    font-family:
+                                        &quot;JetBrains Mono&quot;, monospace;
+                                "
+                            >
+                                Email
+                            </p>
+                            <p
+                                style="
+                                    font-size: 16px;
+                                    color: var(--text);
+                                    margin-top: 3px;
+                                "
+                            >
+                                dineshphuyel20@gmail.com
+                            </p>
+                        </div>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="var(--dim)"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a
+                        href="https://linkedin.com/in/dineshphuyel"
+                        target="_blank"
+                        rel="noopener"
+                        class="card contact-row reveal"
+                        style="color: var(--text)"
+                    >
+                        <div class="contact-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="var(--accent-light)"
+                            >
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                />
+                            </svg>
+                        </div>
+                        <div style="flex: 1">
+                            <p
+                                style="
+                                    font-size: 11px;
+                                    color: var(--dim);
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.1em;
+                                    font-family:
+                                        &quot;JetBrains Mono&quot;, monospace;
+                                "
+                            >
+                                LinkedIn
+                            </p>
+                            <p
+                                style="
+                                    font-size: 16px;
+                                    color: var(--text);
+                                    margin-top: 3px;
+                                "
+                            >
+                                linkedin.com/in/dineshphuyel
+                            </p>
+                        </div>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="var(--dim)"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a
+                        href="https://github.com/dp-0"
+                        target="_blank"
+                        rel="noopener"
+                        class="card contact-row reveal"
+                        style="color: var(--text)"
+                    >
+                        <div class="contact-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="var(--accent-light)"
+                            >
+                                <path
+                                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+                                />
+                            </svg>
+                        </div>
+                        <div style="flex: 1">
+                            <p
+                                style="
+                                    font-size: 11px;
+                                    color: var(--dim);
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.1em;
+                                    font-family:
+                                        &quot;JetBrains Mono&quot;, monospace;
+                                "
+                            >
+                                GitHub
+                            </p>
+                            <p
+                                style="
+                                    font-size: 16px;
+                                    color: var(--text);
+                                    margin-top: 3px;
+                                "
+                            >
+                                github.com/dp-0
+                            </p>
+                        </div>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="var(--dim)"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer
+            style="
+                border-top: 1px solid var(--border);
+                padding: 28px 0;
+                background: var(--bg);
+            "
+        >
+            <div
+                style="
+                    max-width: 1152px;
+                    margin: 0 auto;
+                    padding: 0 24px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 12px;
+                "
+            >
+                <p style="color: var(--dim); font-size: 14px">
+                    Dinesh Phuyel &mdash; PHP / Laravel Developer
+                </p>
+                <p
+                    style="
+                        color: var(--dim);
+                        font-size: 13px;
+                        font-family: &quot;JetBrains Mono&quot;, monospace;
+                    "
+                >
+                    Kathmandu, Nepal &middot; 2026
+                </p>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
