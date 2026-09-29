@@ -1,0 +1,186 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[top=0.65in, bottom=0.65in, left=0.72in, right=0.72in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\hypersetup{
+    colorlinks = true,
+    urlcolor   = black,
+    linkcolor  = black
+}
+
+% Section heading: bold, large, underlined by a rule
+\titleformat{\section}
+    {\large\bfseries}
+    {}
+    {0em}
+    {}
+    [\vspace{-4pt}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Bullets: tight, no extra space
+\setlist[itemize]{
+    leftmargin = 1.4em,
+    label      = \textbullet,
+    itemsep    = 1.5pt,
+    parsep     = 0pt,
+    topsep     = 3pt,
+    partopsep  = 0pt
+}
+
+% Role: {Title}{Company}{Location}{Dates}
+\newcommand{\role}[4]{%
+    \noindent
+    \textbf{#2} \hfill \textit{#3} \\
+    \textit{#1} \hfill #4
+    \vspace{2pt}
+}
+
+% Project header: {Name}{Tech}{URL label}{URL}
+\newcommand{\project}[4]{%
+    \noindent
+    \textbf{#1} \hfill \href{#4}{#3} \\
+    #2
+    \vspace{2pt}
+}
+
+\begin{document}
+\pagestyle{empty}
+
+% HEADER
+\begin{center}
+    {\Huge\bfseries Dinesh Phuyel} \\[4pt]
+    {\large PHP / Laravel Developer} \\[5pt]
+    Kathmandu, Nepal
+    \enspace\textbar\enspace
+    \href{mailto:dineshphuyel20@gmail.com}{dineshphuyel20@gmail.com}
+    \enspace\textbar\enspace
+    +977 9847161718 \\[3pt]
+    \href{https://github.com/dp-0}{github.com/dp-0}
+    \enspace\textbar\enspace
+    \href{https://linkedin.com/in/dineshphuyel}{linkedin.com/in/dineshphuyel}
+    \enspace\textbar\enspace
+    \href{https://dineshphuyel.com.np}{dineshphuyel.com.np}
+\end{center}
+
+\vspace{2pt}
+
+% LANGUAGES & TECHNOLOGIES
+\section{Languages \& Technologies}
+
+\noindent
+\textbf{Languages \& Frameworks:} PHP, Laravel, Livewire, FilamentPHP, Python, Django, React, Inertia.js \\
+\textbf{Databases \& Caching:} MySQL, Redis \\
+\textbf{Real-time \& APIs:} Laravel WebSockets, REST APIs, Stripe, Telegram Bot API \\
+\textbf{Tools:} WordPress, Docker, Git
+
+% PROFESSIONAL EXPERIENCE
+\section{Professional Experience}
+
+\role{PHP Developer}{Studio Matrix}{Kathmandu, Nepal}{July 2024 -- Present}
+\begin{itemize}
+    \item Built core modules for LWF, a multi-tenant procurement platform: demand approvals, tender creation, vendor bid submission, Livewire data tables, and award workflows
+    \item Implemented configurable evaluation criteria and evaluator assignment for LWF, with multi-evaluator scoring, automatic score aggregation, bid ranking, audit trails, and reporting
+    \item Built a real-time campaign platform using Laravel WebSockets and external API integrations, automating entries and results and announcing winners live to 1,000+ concurrent participants
+    \item Extended reporting and WordPress integration for First Look Games, an iGaming marketing and analytics platform, without disrupting existing features
+    \item Upgraded SnowOnly, a Laravel ski property marketplace, from Laravel 10 to 12 and resolved breaking compatibility issues
+    \item Integrated a Telegram bot and built authentication APIs for PeakScale Ops, a Python/Django operations platform
+    \item Implemented membership-based booking and delivery flows with Stripe payments for Exotiq, a WordPress newspaper delivery platform
+\end{itemize}
+
+\vspace{6pt}
+
+\role{PHP Developer}{Velox Labs}{Kathmandu, Nepal}{March 2024 -- July 2024}
+\begin{itemize}
+    \item Implemented Redis-backed cache locking in Laravel to prevent race conditions during concurrent writes, preserving data integrity under high load
+    \item Built a configurable payroll engine with overtime and break-time rules, automating salary calculations for 100+ employees and reducing manual payroll errors
+    \item Parallelized external API calls with Laravel's HTTP pool, reducing data retrieval time across multiple third-party integrations
+\end{itemize}
+
+\vspace{6pt}
+
+\role{PHP Developer}{Crystal Solution}{Birtamode, Nepal}{July 2022 -- April 2023}
+\begin{itemize}
+    \item Refactored a legacy School ERP system, modernizing the architecture and delivering student management, fee collection, and library management modules
+    \item Built a Fee Collection System with automated payment tracking, receipt generation, and financial reporting, replacing manual record-keeping
+    \item Implemented automated fine and rebate calculation for library and fee management, removing error-prone manual computation
+\end{itemize}
+
+% OPEN SOURCE
+\section{Open Source}
+
+\noindent
+\textbf{Filament Sanchaya}
+\hfill
+\href{https://github.com/dp-0/filament-sanchaya}{github.com/dp-0/filament-sanchaya} \\
+PHP, Laravel, Livewire, FilamentPHP
+
+\vspace{2pt}
+\begin{itemize}
+    \item Built a Filament-native file manager package with folder tree navigation, grid/list views, cursor-based pagination, MIME-type filtering, and multi-disk support (PHP 8.4, Laravel 13, Filament 5)
+    \item Implemented cross-disk move and copy with automatic name-conflict resolution, plus on-the-fly ZIP streaming for bulk folder downloads
+    \item Shipped a reusable MediaPicker form field with single/multiple selection and polymorphic, group-based attachment persistence via the HasSanchayaFiles trait, so consumers need minimal setup
+    \item Designed a Gate-based authorization layer with a swappable policy class and replaceable, independently configurable action classes per operation
+\end{itemize}
+
+\vspace{6pt}
+
+\noindent
+\textbf{User Activity Package} \enspace [archived]
+\hfill
+\href{https://github.com/dp-0/user-activity}{github.com/dp-0/user-activity} \\
+PHP, Laravel, Livewire
+\vspace{2pt}
+\begin{itemize}
+    \item Built an open-source Laravel package for granular user activity tracking, logging logins, logouts, and model-level changes with filterable audit trails by user, model, action, and timestamp
+\end{itemize}
+
+% PROJECTS
+\section{Projects}
+
+\noindent
+\textbf{PIAAN Levy Collection} \hfill In development \\
+Laravel, Inertia.js, React
+\vspace{2pt}
+\begin{itemize}
+    \item Developing a hierarchical levy collection system where each level creates members, retains a commission share, and forwards the remainder to the next higher level
+\end{itemize}
+
+\vspace{6pt}
+
+\project{Somluitel Portfolio \& Blog}{PHP, Laravel, FilamentPHP}{somluitel.com.np}{https://somluitel.com.np}
+\begin{itemize}
+    \item Built a portfolio and blog for a financial professional, with posts, resources, gallery, testimonials, contact forms, and an insurance premium calculator
+    \item Developed a FilamentPHP admin panel so the client can manage content and user interactions without developer help
+\end{itemize}
+
+% EDUCATION
+\section{Education}
+
+\noindent
+\textbf{Master of Information Technology (MIT)} \hfill February 2025 -- Present \\
+\textit{Patan Multiple Campus, Lalitpur}
+
+\vspace{6pt}
+
+\noindent
+\textbf{Bachelor in Computer Application (BCA)} \hfill August 2019 -- February 2024 \\
+\textit{Mechi Multiple Campus, Bhadrapur, Jhapa}
+
+% CERTIFICATIONS
+\section{Certifications}
+
+\begin{itemize}
+    \item Docker Essentials: A Developer Introduction \textemdash{} IBM SkillsBuild
+\end{itemize}
+
+\end{document}
