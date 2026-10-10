@@ -57,7 +57,6 @@
                     "addressCountry": "Nepal"
                 },
                 "sameAs": [
-                    "https://github.com/dp-0",
                     "https://linkedin.com/in/dineshphuyel"
                 ]
             }
@@ -65,561 +64,463 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Lora:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Geist:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500;1,600&display=swap"
             rel="stylesheet"
         />
+        <script>
+            try {
+                const savedTheme = localStorage.getItem('portfolio-theme');
+                if (savedTheme === 'dark' || (!savedTheme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (error) { /* Theme preference is optional. */ }
+        </script>
         <link rel="stylesheet" href="css/style.css" />
     </head>
 
     <body>
-        <nav class="nav-glass fixed top-0 left-0 right-0 z-50">
-            <div
-                style="
-                    max-width: 1152px;
-                    margin: 0 auto;
-                    padding: 0 24px;
-                    height: 60px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                "
-            >
-                <a
-                    href="#hero"
-                    style="cursor: pointer; display: flex; align-items: center"
-                >
-                    <img
-                        src="logo.png"
-                        alt="Dinesh Phuyel Logo"
-                        style="height: 32px; width: auto"
-                    />
-                </a>
-                <div
-                    style="display: flex; align-items: center; gap: 32px"
-                    class="hidden md:flex"
-                >
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#experience" class="nav-link">Experience</a>
-                    <a href="#opensource" class="nav-link">Open Source</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a
-                        href="#contact"
-                        class="btn btn-primary"
-                        style="font-size: 14px; padding: 8px 18px"
-                        >Hire Me</a
-                    >
-                </div>
-                <button
-                    id="menu-btn"
-                    onclick="toggleMenu()"
-                    aria-label="Toggle menu"
-                    class="md:hidden"
-                    style="
-                        background: none;
-                        border: none;
-                        cursor: pointer;
-                        color: var(--muted);
-                    "
-                >
-                    <svg
-                        id="icon-open"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <line x1="4" y1="6" x2="20" y2="6" />
-                        <line x1="4" y1="12" x2="20" y2="12" />
-                        <line x1="4" y1="18" x2="20" y2="18" />
-                    </svg>
-                    <svg
-                        id="icon-close"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        style="display: none"
-                    >
-                        <line x1="18" y1="6" x2="6" y2="18" />
-                        <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
-                </button>
-            </div>
-            <div id="mobile-menu">
-                <a
-                    href="#skills"
-                    onclick="closeMenu()"
-                    class="nav-link"
-                    style="padding: 10px 0"
-                    >Skills</a
-                >
-                <a
-                    href="#experience"
-                    onclick="closeMenu()"
-                    class="nav-link"
-                    style="padding: 10px 0"
-                    >Experience</a
-                >
-                <a
-                    href="#opensource"
-                    onclick="closeMenu()"
-                    class="nav-link"
-                    style="padding: 10px 0"
-                    >Open Source</a
-                >
-                <a
-                    href="#projects"
-                    onclick="closeMenu()"
-                    class="nav-link"
-                    style="padding: 10px 0"
-                    >Projects</a
-                >
-                <a
-                    href="#contact"
-                    onclick="closeMenu()"
-                    class="btn btn-primary"
-                    style="
-                        margin-top: 8px;
-                        width: fit-content;
-                        font-size: 14px;
-                        padding: 10px 20px;
-                    "
-                    >Hire Me</a
-                >
-            </div>
-        </nav>
-
-        <div
-            class="bottom-nav"
-            role="navigation"
-            aria-label="Mobile navigation"
-        >
-            <a
-                href="#skills"
-                class="bottom-nav-item"
-                data-target="skills"
-                aria-label="Skills"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                    <path d="M2 17l10 5 10-5" />
-                    <path d="M2 12l10 5 10-5" />
-                </svg>
-                <span class="nav-label">Skills</span>
-            </a>
-            <a
-                href="#experience"
-                class="bottom-nav-item"
-                data-target="experience"
-                aria-label="Experience"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                </svg>
-                <span class="nav-label">Work</span>
-            </a>
-            <a
-                href="#opensource"
-                class="bottom-nav-item"
-                data-target="opensource"
-                aria-label="Open Source"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
-                    />
-                    <path d="M8 10l4 4 4-4" />
-                    <path d="M12 14V6" />
-                </svg>
-                <span class="nav-label">OSS</span>
-            </a>
-            <a
-                href="#projects"
-                class="bottom-nav-item"
-                data-target="projects"
-                aria-label="Projects"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
-                    />
-                </svg>
-                <span class="nav-label">Projects</span>
-            </a>
-            <a
-                href="#contact"
-                class="bottom-nav-item"
-                data-target="contact"
-                aria-label="Contact"
-                style="color: var(--accent-light)"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path
-                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                    />
-                    <polyline points="22,6 12,13 2,6" />
-                </svg>
-                <span class="nav-label" style="color: var(--accent-light)"
-                    >Hire</span
-                >
-            </a>
-        </div>
-
-        <div class="bottom-nav-spacer"></div>
-
-        <section
-            id="hero"
-            style="
-                min-height: 100vh;
-                display: flex;
-                align-items: center;
-                position: relative;
-                overflow: hidden;
-                padding: 120px 0 80px;
-            "
-        >
-            <div class="hero-dots"></div>
-            <div
-                style="
-                    max-width: 1152px;
-                    margin: 0 auto;
-                    padding: 0 24px;
-                    width: 100%;
-                "
-            >
-                <div style="max-width: 700px">
-                    <p class="section-tag" style="margin-bottom: 10px">
-                        Hi, I'm
-                    </p>
-                    <h1
-                        style="
-                            font-family: &quot;Lora&quot;, serif;
-                            font-weight: 700;
-                            font-size: clamp(50px, 8.5vw, 84px);
-                            line-height: 1.07;
-                            letter-spacing: -0.01em;
-                            color: var(--text);
-                            margin-bottom: 12px;
-                        "
-                    >
-                        Dinesh<br />Phuyel
-                    </h1>
-                    <p
-                        style="
-                            font-family: &quot;Space Grotesk&quot;, sans-serif;
-                            font-size: clamp(20px, 3vw, 28px);
-                            color: var(--accent-light);
-                            font-weight: 500;
-                            letter-spacing: -0.01em;
-                            margin-bottom: 20px;
-                        "
-                    >
-                        PHP / Laravel Developer
-                    </p>
-                    <p
-                        style="
-                            font-size: 17px;
-                            color: var(--muted);
-                            line-height: 1.75;
-                            max-width: 540px;
-                            margin-bottom: 36px;
-                        "
-                    >
-                        I build procurement platforms, real-time applications,
-                        and practical integrations, with PHP and Laravel at the
-                        core. Based in Kathmandu, Nepal.
-                    </p>
-                    <div
-                        style="
-                            display: flex;
-                            flex-wrap: wrap;
-                            gap: 12px;
-                            margin-bottom: 40px;
-                        "
-                    >
-                        <a href="#projects" class="btn btn-primary">
-                            View My Work
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="15"
-                                height="15"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2.5"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </a>
-                        <a
-                            href="Dinesh%20phuyel%20cv.pdf"
-                            download="Dinesh-Phuyel-CV.pdf"
-                            class="btn btn-secondary"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="15"
-                                height="15"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path
-                                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                                />
-                                <polyline points="7 10 12 15 17 10" />
-                                <line x1="12" y1="15" x2="12" y2="3" />
-                            </svg>
-                            Download CV
-                        </a>
-                        <a
-                            href="https://github.com/dp-0"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn btn-secondary"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="15"
-                                height="15"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                            >
-                                <path
-                                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
-                                />
-                            </svg>
-                            GitHub
-                        </a>
-                    </div>
-                    <div
-                        style="
-                            display: flex;
-                            flex-wrap: wrap;
-                            gap: 20px;
-                            color: var(--dim);
-                            font-size: 14px;
-                        "
-                    >
-                        <span
-                            style="display: flex; align-items: center; gap: 7px"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="13"
-                                height="13"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path
-                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                                />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                            Kathmandu, Nepal
-                        </span>
-                        <span
-                            style="display: flex; align-items: center; gap: 7px"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="13"
-                                height="13"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <rect
-                                    x="2"
-                                    y="7"
-                                    width="20"
-                                    height="14"
-                                    rx="2"
-                                />
-                                <path
-                                    d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"
-                                />
-                            </svg>
-                            3+ years experience
-                        </span>
-                        <span
-                            style="display: flex; align-items: center; gap: 7px"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="13"
-                                height="13"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path
-                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                                />
-                            </svg>
-                            Open source author
-                        </span>
-                    </div>
+<a class="skip-link" href="#main">Skip to content</a>
+        <header class="site-header">
+            <div class="site-nav container">
+                <a class="brand" href="#hero" aria-label="Dinesh Phuyel, back to top"><span class="brand-mark"><img src="logo.png" alt="" width="80" height="80" /></span><span class="brand-name"><em>Dinesh</em> <strong>Phuyel</strong></span></a>
+                <nav class="desktop-nav" aria-label="Main navigation">
+                    <a href="#opensource">Open source</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch color theme" title="Switch color theme">
+                        <svg class="theme-sun" aria-hidden="true" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                        <svg class="theme-moon" aria-hidden="true" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></svg>
+                    </button>
+                    <a class="btn btn-primary nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+                    <button id="menu-btn" class="icon-button menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu"><span class="menu-lines" aria-hidden="true"></span></button>
                 </div>
             </div>
-            <div
-                style="
-                    position: absolute;
-                    bottom: 32px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 6px;
-                    color: var(--dim);
-                    font-size: 11px;
-                    letter-spacing: 0.12em;
-                    text-transform: uppercase;
-                    font-family: &quot;JetBrains Mono&quot;, monospace;
-                "
-            >
-                <span>Scroll</span>
-                <svg
-                    class="bounce"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path d="M12 5v14M5 12l7 7 7-7" />
-                </svg>
+            <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+                <a href="#opensource">Open source</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
+            </nav>
+        </header>
+        <main id="main">
+<section id="hero" class="hero-section">
+            <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow hero-eyebrow"><span class="status-dot"></span> PHP / Laravel Developer · Kathmandu, Nepal</p>
+                    <h1><span class="hero-serif">Building <em>better</em></span><span class="hero-strong">digital systems<span class="period">.</span></span></h1>
+                    <p class="hero-lead">I’m Dinesh Phuyel. I build procurement platforms, real-time applications, and practical integrations with PHP and Laravel at the core.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+                        <a class="btn btn-secondary" href="Dinesh%20phuyel%20cv.pdf" download="Dinesh-Phuyel-CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
+                    </div>
+                    <div class="hero-footnote"><span>Open to backend roles, freelance projects &amp; Laravel consulting.</span><a href="#contact">Get in touch <span aria-hidden="true">→</span></a></div>
+                </div>
+                <aside class="hero-feature reveal" aria-label="Featured project">
+                    <div class="feature-topline"><span class="eyebrow">Featured open source</span><a class="feature-top-link" href="https://filament-sanchaya.dineshphuyel.com.np/" target="_blank" rel="noopener noreferrer" aria-label="Visit Filament Sanchaya project site"><span aria-hidden="true">↗</span></a></div>
+                    <div class="feature-icon" aria-hidden="true"><svg class="sanchaya-mark" width="64" height="64" viewBox="0 0 36 36" focusable="false"><rect width="36" height="36" rx="8"/><text x="18" y="24" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="20" font-weight="700">S</text></svg></div>
+                    <h2><em>Filament</em><br /><strong>Sanchaya</strong></h2>
+                    <p>A native file manager and media picker for the FilamentPHP ecosystem.</p>
+                    <div class="feature-bottom"><span>Open source · Laravel</span></div>
+                </aside>
             </div>
+            <div class="hero-scroll container"><span>Scroll to explore</span><span aria-hidden="true">↓</span></div>
         </section>
-
-        <section
-            id="skills"
+<section
+            id="opensource"
             style="background: var(--surface); padding: 80px 0"
         >
             <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
                 <div class="reveal">
-                    <p class="section-tag">What I work with</p>
-                    <h2 class="section-title">Skills &amp; Technologies</h2>
+                    <p class="section-tag">Built for the community</p>
+                    <h2 class="section-title"><span class="title-intro">Made to be <em>shared.</em></span><strong>Open Source</strong></h2>
+                </div>
+                <div
+                    class="card-featured reveal"
+                    style="padding: 36px; margin-bottom: 20px"
+                >
+                    <div
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            align-items: flex-start;
+                            gap: 16px;
+                            margin-bottom: 20px;
+                        "
+                    >
+                        <div>
+                            <div
+                                class="sanchaya-heading-row"
+                                style="
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 12px;
+                                    margin-bottom: 8px;
+                                "
+                            >
+                                <svg class="sanchaya-mark sanchaya-mark-small" width="28" height="28" viewBox="0 0 36 36" aria-hidden="true" focusable="false"><rect width="36" height="36" rx="8"/><text x="18" y="24" text-anchor="middle" font-family="IBM Plex Sans, Arial, sans-serif" font-size="20" font-weight="700">S</text></svg>
+                                <h3
+                                    style="
+                                        font-family:
+                                            &quot;Space Grotesk&quot;,
+                                            sans-serif;
+                                        font-weight: 700;
+                                        font-size: 22px;
+                                        color: var(--text);
+                                    "
+                                >
+                                    <em class="project-title-serif">Filament</em> <span class="project-title-strong">Sanchaya</span>
+                                </h3>
+                            </div>
+                            <p
+                                style="
+                                    color: var(--muted);
+                                    font-size: 15px;
+                                    line-height: 1.7;
+                                    max-width: 560px;
+                                "
+                            >
+                                A Filament-native file manager and media picker
+                                for Laravel — filling a gap in the FilamentPHP
+                                ecosystem. <em>Sanchaya</em> (सञ्चय) means
+                                "gathering something valuable" in Nepali.
+                            </p>
+                        </div>
+                        <a href="https://filament-sanchaya.dineshphuyel.com.np/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm demo-link icon-link" aria-label="Visit Filament Sanchaya project site"><span aria-hidden="true">↗</span></a>
+                    </div>
+                    <div class="code-block" style="margin-bottom: 20px">
+                        <span class="prompt">$</span>
+                        <code id="sanchaya-install-command">composer require dp0/filament-sanchaya</code>
+                        <button class="copy-command" type="button" data-copy-target="sanchaya-install-command" aria-label="Copy install command" title="Copy install command">
+                            <svg class="copy-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>
+                            <svg class="copied-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+                            <span class="copy-label" aria-live="polite">Copy</span>
+                        </button>
+                    </div>
+                    <div
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 8px;
+                            margin-bottom: 28px;
+                        "
+                    >
+                        <span class="tech-tag">PHP 8.4</span>
+                        <span class="tech-tag">Laravel 13</span>
+                        <span class="tech-tag">Filament 5</span>
+                        <span class="tech-tag">Livewire</span>
+                    </div>
+                    <div
+                        style="
+                            border-top: 1px solid rgba(63, 63, 70, 0.5);
+                            padding-top: 24px;
+                            display: grid;
+                            grid-template-columns: repeat(
+                                auto-fit,
+                                minmax(260px, 1fr)
+                            );
+                            gap: 12px;
+                        "
+                    >
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Full-featured
+                            file manager with folder tree navigation
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Multi-disk
+                            support with cursor-based pagination
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Cross-disk move
+                            &amp; copy with on-the-fly ZIP streaming
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Reusable
+                            MediaPicker field with polymorphic attachments
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Authorization
+                            via Laravel Gates with swappable policy
+                        </div>
+                        <div class="feature-row">
+                            <span class="feature-check">✓</span> Independently
+                            configurable, replaceable action classes
+                        </div>
+                    </div>
+                </div>
+                <div class="card reveal" style="padding: 24px">
+                    <div
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            align-items: flex-start;
+                            gap: 12px;
+                        "
+                    >
+                        <div>
+                            <div
+                                style="
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    margin-bottom: 6px;
+                                "
+                            >
+                                <h3
+                                    style="
+                                        font-family:
+                                            &quot;Space Grotesk&quot;,
+                                            sans-serif;
+                                        font-weight: 600;
+                                        font-size: 18px;
+                                        color: var(--text);
+                                    "
+                                >
+                                    <em class="project-title-serif">User Activity</em> <span class="project-title-strong">Package</span>
+                                </h3>
+                                <span class="badge-archived">archived</span>
+                            </div>
+                            <p
+                                style="
+                                    color: var(--muted);
+                                    font-size: 14px;
+                                    line-height: 1.6;
+                                    max-width: 500px;
+                                "
+                            >
+                                Laravel package for granular user activity
+                                tracking — logs logins, logouts, and model-level
+                                changes with filterable audit trails by user,
+                                model, action, and timestamp.
+                            </p>
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 6px;
+                                    margin-top: 12px;
+                                "
+                            >
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">Livewire</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+<section id="projects" style="padding: 80px 0">
+            <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
+                <div class="reveal">
+                    <p class="section-tag">Selected work</p>
+                    <h2 class="section-title"><span class="title-intro">Ideas turned into</span><strong>Useful Work</strong></h2>
                 </div>
                 <div
                     style="
                         display: grid;
                         grid-template-columns: repeat(
                             auto-fit,
-                            minmax(min(100%, 260px), 1fr)
+                            minmax(min(100%, 280px), 1fr)
                         );
-                        gap: 40px;
+                        gap: 20px;
                     "
                 >
-                    <div class="reveal">
-                        <p
-                            style="
-                                font-size: 12px;
-                                color: var(--dim);
-                                text-transform: uppercase;
-                                letter-spacing: 0.1em;
-                                font-family:
-                                    &quot;JetBrains Mono&quot;, monospace;
-                                margin-bottom: 14px;
-                            "
-                        >
-                            Languages &amp; Frameworks
-                        </p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px">
-                            <span class="skill-badge">PHP</span>
-                            <span class="skill-badge">Laravel</span>
-                            <span class="skill-badge">Livewire</span>
-                            <span class="skill-badge">FilamentPHP</span>
-                            <span class="skill-badge">Python</span>
-                            <span class="skill-badge">Django</span>
-                            <span class="skill-badge">React</span>
-                            <span class="skill-badge">Inertia.js</span>
+                    <article class="card reveal project-card">
+                        <p class="project-context">Studio Matrix / E-procurement</p>
+                        <a class="project-open-link" href="https://lwfeprocurements.org/" aria-label="Visit LWF E-Procurement" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span></a>
+                        <div class="project-heading">
+                            <h3><span class="project-title-strong">LWF</span></h3>
                         </div>
-                    </div>
-                    <div class="reveal">
-                        <p
-                            style="
-                                font-size: 12px;
-                                color: var(--dim);
-                                text-transform: uppercase;
-                                letter-spacing: 0.1em;
-                                font-family:
-                                    &quot;JetBrains Mono&quot;, monospace;
-                                margin-bottom: 14px;
-                            "
-                        >
-                            Databases &amp; Caching
+                        <p class="project-description">
+                            A separate-database multi-tenant procurement and
+                            tender evaluation platform. I worked across demand
+                            approvals, tender creation, vendor bids, evaluation
+                            criteria, evaluator assignment, Livewire tables,
+                            multi-evaluator scoring, score aggregation, bid
+                            ranking, awards, audit trails, and reporting.
                         </p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px">
-                            <span class="skill-badge">MySQL</span>
-                            <span class="skill-badge">Redis</span>
-                            <span class="skill-badge">Query Optimization</span>
-                            <span class="skill-badge">Cache Locking</span>
+                        <div class="project-tags">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">Livewire</span>
+                            <span class="tech-tag">Multi-tenancy</span>
+                            <span class="tech-tag">Procurement</span>
                         </div>
-                    </div>
-                    <div class="reveal">
-                        <p
-                            style="
-                                font-size: 12px;
-                                color: var(--dim);
-                                text-transform: uppercase;
-                                letter-spacing: 0.1em;
-                                font-family:
-                                    &quot;JetBrains Mono&quot;, monospace;
-                                margin-bottom: 14px;
-                            "
-                        >
-                            Real-time &amp; APIs
+                    </article>
+                    <article class="card reveal project-card">
+                        <p class="project-context">Education / Online learning</p>
+                        <a class="project-open-link" href="https://deltacenterforenglish.com/" aria-label="Visit Delta Center for English" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span></a>
+                        <div class="project-heading">
+                            <h3><em class="project-title-serif">Delta</em> <span class="project-title-strong">Center for English</span></h3>
+                        </div>
+                        <p class="project-description">
+                            An online course platform where learners can explore
+                            English-language classes and test preparation for
+                            IELTS, PTE, Duolingo English Test, and Oxford Digital
+                            ELLT, alongside academic leadership training for
+                            educators.
                         </p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px">
-                            <span class="skill-badge">Laravel WebSockets</span>
-                            <span class="skill-badge">REST APIs</span>
-                            <span class="skill-badge">HTTP Pools</span>
-                            <span class="skill-badge">API Integration</span>
-                            <span class="skill-badge">Stripe</span>
-                            <span class="skill-badge">Telegram Bot API</span>
+                        <div class="project-tags">
+                            <span class="tech-tag">Online courses</span>
+                            <span class="tech-tag">Test preparation</span>
+                            <span class="tech-tag">Education</span>
                         </div>
-                    </div>
+                    </article>
+                    <article class="card reveal project-card">
+                        <p class="project-context">PIAAN / Levy collection</p>
+                        <div class="project-heading">
+                            <h3><em class="project-title-serif">PIAAN</em> <span class="project-title-strong">Levy Collection</span></h3>
+                            <span class="badge-ongoing">In development</span>
+                        </div>
+                        <p class="project-description">
+                            Developing a levy collection system for
+                            <span lang="ne">पेशागत बीमा अभिकर्ता संघ नेपाल</span>.
+                            Each level creates members, retains part of the levy
+                            as commission, and forwards the remainder to the
+                            next higher level.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">Inertia.js</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                    </article>
+                    <article class="card reveal project-card">
+                        <p class="project-context">Studio Matrix / Marketing analytics</p>
+                        <a class="project-open-link" href="https://firstlookgames.com/" aria-label="Visit First Look Games" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span></a>
+                        <div class="project-heading">
+                            <h3><em class="project-title-serif">First</em> <span class="project-title-strong">Look Games</span></h3>
+                        </div>
+                        <p class="project-description">
+                            Enhanced and maintained reports for an iGaming
+                            marketing platform, worked on its WordPress
+                            integration, and fixed issues across the existing
+                            application.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tech-tag">Reporting</span>
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">Integrations</span>
+                        </div>
+                    </article>
+                    <article class="card reveal project-card">
+                        <p class="project-context">Studio Matrix / Property marketplace</p>
+                        <a class="project-open-link" href="https://snowonly.com/" aria-label="Visit SnowOnly" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span></a>
+                        <div class="project-heading">
+                            <h3><span class="project-title-strong">SnowOnly</span></h3>
+                        </div>
+                        <p class="project-description">
+                            Upgraded an established Laravel application for an
+                            international ski property marketplace, resolving
+                            framework compatibility issues during the migration.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">Framework upgrade</span>
+                        </div>
+                    </article>
+                    <article class="card reveal project-card">
+                        <p class="project-context">Studio Matrix / Operations</p>
+                        <a class="project-open-link" href="https://peakscaleops.com/" aria-label="Visit PeakScale Ops" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span></a>
+                        <div class="project-heading">
+                            <h3><em class="project-title-serif">PeakScale</em> <span class="project-title-strong">Ops</span></h3>
+                        </div>
+                        <p class="project-description">
+                            Integrated a Telegram bot into a Python/Django
+                            operations platform and implemented sign-in flows
+                            and authentication APIs, working with its existing
+                            checklist workflows where needed.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Telegram Bot API</span>
+                        </div>
+                    </article>
+                    <article class="card reveal project-card">
+                        <p class="project-context">Studio Matrix / Delivery and booking</p>
+                        <a class="project-open-link" href="https://exotiq.online/" aria-label="Visit Exotiq" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span></a>
+                        <div class="project-heading">
+                            <h3><span class="project-title-strong">Exotiq</span></h3>
+                        </div>
+                        <p class="project-description">
+                            Added membership-level access and booking flows to a
+                            WordPress publication and print delivery platform,
+                            with Stripe payments connected across the relevant
+                            pages.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">Memberships</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                    </article>
+                    <article class="card reveal project-card">
+                        <p class="project-context">Velox Labs / HR software</p>
+                        <a class="project-open-link" href="https://hajirhr.com/" aria-label="Visit Hajir HR" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span></a>
+                        <div class="project-heading">
+                            <h3><em class="project-title-serif">Hajir</em> <span class="project-title-strong">HR</span></h3>
+                        </div>
+                        <p class="project-description">
+                            Built a configurable payroll engine with overtime
+                            and break-time rules, automating salary calculations
+                            for more than 100 employees.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">Payroll</span>
+                            <span class="tech-tag">HR software</span>
+                        </div>
+                    </article>
+                    <article class="card reveal project-card">
+                        <p class="project-context">Crystal Solution / School ERP</p>
+                        <a class="project-open-link" href="https://thecrystalerp.com/" aria-label="Visit Crystal ERP" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span></a>
+                        <div class="project-heading">
+                            <h3><em class="project-title-serif">Crystal</em> <span class="project-title-strong">ERP</span></h3>
+                        </div>
+                        <p class="project-description">
+                            Modernized school ERP features for student management,
+                            fee collection, and library workflows, including
+                            payment tracking and automated fine calculations.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">ERP</span>
+                            <span class="tech-tag">Education</span>
+                        </div>
+                    </article>
+                    <article class="card reveal project-card">
+                        <p class="project-context">Independent project / Financial services</p>
+                        <a class="project-open-link" href="https://somluitel.com.np" aria-label="Visit Som Luitel Portfolio" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">↗</span></a>
+                        <div class="project-heading">
+                            <h3><em class="project-title-serif">Som Luitel</em> <span class="project-title-strong">Portfolio</span></h3>
+                        </div>
+                        <p class="project-description">
+                            Built a dynamic Laravel portfolio and blog for a
+                            financial professional, with posts, resources, a
+                            gallery, testimonials, contact features, and an
+                            insurance premium calculator. A FilamentPHP backend
+                            manages content and user interactions.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">FilamentPHP</span>
+                            <span class="tech-tag">Dynamic CMS</span>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
-
-        <section id="experience" style="padding: 80px 0">
+<section id="experience" style="padding: 80px 0">
             <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
                 <div class="reveal">
                     <p class="section-tag">Where I've worked</p>
-                    <h2 class="section-title">Experience</h2>
+                    <h2 class="section-title"><span class="title-intro">The road so <em>far.</em></span><strong>Experience</strong></h2>
                 </div>
                 <div
                     style="
@@ -1042,481 +943,105 @@
                 </div>
             </div>
         </section>
-
-        <section
-            id="opensource"
+<section
+            id="skills"
             style="background: var(--surface); padding: 80px 0"
         >
             <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
                 <div class="reveal">
-                    <p class="section-tag">Built for the community</p>
-                    <h2 class="section-title">Open Source</h2>
-                </div>
-                <div
-                    class="card-featured reveal"
-                    style="padding: 36px; margin-bottom: 20px"
-                >
-                    <div
-                        style="
-                            display: flex;
-                            flex-wrap: wrap;
-                            justify-content: space-between;
-                            align-items: flex-start;
-                            gap: 16px;
-                            margin-bottom: 20px;
-                        "
-                    >
-                        <div>
-                            <div
-                                style="
-                                    display: flex;
-                                    align-items: center;
-                                    gap: 12px;
-                                    margin-bottom: 8px;
-                                "
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="var(--accent-light)"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path
-                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-                                    />
-                                </svg>
-                                <h3
-                                    style="
-                                        font-family:
-                                            &quot;Space Grotesk&quot;,
-                                            sans-serif;
-                                        font-weight: 700;
-                                        font-size: 22px;
-                                        color: var(--text);
-                                    "
-                                >
-                                    Filament Sanchaya
-                                </h3>
-                                <span class="badge-new">New</span>
-                            </div>
-                            <p
-                                style="
-                                    color: var(--muted);
-                                    font-size: 15px;
-                                    line-height: 1.7;
-                                    max-width: 560px;
-                                "
-                            >
-                                A Filament-native file manager and media picker
-                                for Laravel — filling a gap in the FilamentPHP
-                                ecosystem. <em>Sanchaya</em> (सञ्चय) means
-                                "gathering something valuable" in Nepali.
-                            </p>
-                        </div>
-                        <a
-                            href="https://github.com/dp-0/filament-sanchaya"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-secondary btn-sm"
-                            style="flex-shrink: 0"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                            >
-                                <path
-                                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
-                                />
-                            </svg>
-                            View on GitHub
-                        </a>
-                    </div>
-                    <div class="code-block" style="margin-bottom: 20px">
-                        <span class="prompt">$</span>
-                        <span>composer require dp0/filament-sanchaya</span>
-                    </div>
-                    <div
-                        style="
-                            display: flex;
-                            flex-wrap: wrap;
-                            gap: 8px;
-                            margin-bottom: 28px;
-                        "
-                    >
-                        <span class="tech-tag">PHP 8.4</span>
-                        <span class="tech-tag">Laravel 13</span>
-                        <span class="tech-tag">Filament 5</span>
-                        <span class="tech-tag">Livewire</span>
-                    </div>
-                    <div
-                        style="
-                            border-top: 1px solid rgba(63, 63, 70, 0.5);
-                            padding-top: 24px;
-                            display: grid;
-                            grid-template-columns: repeat(
-                                auto-fit,
-                                minmax(260px, 1fr)
-                            );
-                            gap: 12px;
-                        "
-                    >
-                        <div class="feature-row">
-                            <span class="feature-check">✓</span> Full-featured
-                            file manager with folder tree navigation
-                        </div>
-                        <div class="feature-row">
-                            <span class="feature-check">✓</span> Multi-disk
-                            support with cursor-based pagination
-                        </div>
-                        <div class="feature-row">
-                            <span class="feature-check">✓</span> Cross-disk move
-                            &amp; copy with on-the-fly ZIP streaming
-                        </div>
-                        <div class="feature-row">
-                            <span class="feature-check">✓</span> Reusable
-                            MediaPicker field with polymorphic attachments
-                        </div>
-                        <div class="feature-row">
-                            <span class="feature-check">✓</span> Authorization
-                            via Laravel Gates with swappable policy
-                        </div>
-                        <div class="feature-row">
-                            <span class="feature-check">✓</span> Independently
-                            configurable, replaceable action classes
-                        </div>
-                    </div>
-                </div>
-                <div class="card reveal" style="padding: 24px; opacity: 0.65">
-                    <div
-                        style="
-                            display: flex;
-                            flex-wrap: wrap;
-                            justify-content: space-between;
-                            align-items: flex-start;
-                            gap: 12px;
-                        "
-                    >
-                        <div>
-                            <div
-                                style="
-                                    display: flex;
-                                    align-items: center;
-                                    gap: 10px;
-                                    margin-bottom: 6px;
-                                "
-                            >
-                                <h3
-                                    style="
-                                        font-family:
-                                            &quot;Space Grotesk&quot;,
-                                            sans-serif;
-                                        font-weight: 600;
-                                        font-size: 18px;
-                                        color: var(--text);
-                                    "
-                                >
-                                    User Activity Package
-                                </h3>
-                                <span class="badge-archived">archived</span>
-                            </div>
-                            <p
-                                style="
-                                    color: var(--muted);
-                                    font-size: 14px;
-                                    line-height: 1.6;
-                                    max-width: 500px;
-                                "
-                            >
-                                Laravel package for granular user activity
-                                tracking — logs logins, logouts, and model-level
-                                changes with filterable audit trails by user,
-                                model, action, and timestamp.
-                            </p>
-                            <div
-                                style="
-                                    display: flex;
-                                    flex-wrap: wrap;
-                                    gap: 6px;
-                                    margin-top: 12px;
-                                "
-                            >
-                                <span class="tech-tag">PHP</span>
-                                <span class="tech-tag">Laravel</span>
-                                <span class="tech-tag">Livewire</span>
-                            </div>
-                        </div>
-                        <a
-                            href="https://github.com/dp-0"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-secondary btn-sm"
-                            style="flex-shrink: 0"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="13"
-                                height="13"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                            >
-                                <path
-                                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
-                                />
-                            </svg>
-                            GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" style="padding: 80px 0">
-            <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
-                <div class="reveal">
-                    <p class="section-tag">Selected work</p>
-                    <h2 class="section-title">Projects</h2>
+                    <p class="section-tag">What I work with</p>
+                    <h2 class="section-title"><span class="title-intro">Tools of the <em>trade.</em></span><strong>Skills &amp; Technologies</strong></h2>
                 </div>
                 <div
                     style="
                         display: grid;
                         grid-template-columns: repeat(
                             auto-fit,
-                            minmax(min(100%, 280px), 1fr)
+                            minmax(min(100%, 260px), 1fr)
                         );
-                        gap: 20px;
+                        gap: 40px;
                     "
                 >
-                    <article class="card reveal project-card">
-                        <p class="project-context">Studio Matrix / E-procurement</p>
-                        <div class="project-heading">
-                            <h3>LWF</h3>
-                            <a
-                                class="project-link"
-                                href="https://lwfeprocurements.org/"
-                                aria-label="Visit LWF E-Procurement"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >Visit site</a>
-                        </div>
-                        <p class="project-description">
-                            A separate-database multi-tenant procurement and
-                            tender evaluation platform. I worked across demand
-                            approvals, tender creation, vendor bids, evaluation
-                            criteria, evaluator assignment, Livewire tables,
-                            multi-evaluator scoring, score aggregation, bid
-                            ranking, awards, audit trails, and reporting.
+                    <div class="reveal">
+                        <p
+                            style="
+                                font-size: 12px;
+                                color: var(--dim);
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                                font-family:
+                                    &quot;JetBrains Mono&quot;, monospace;
+                                margin-bottom: 14px;
+                            "
+                        >
+                            Languages &amp; Frameworks
                         </p>
-                        <div class="project-tags">
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">Livewire</span>
-                            <span class="tech-tag">Multi-tenancy</span>
-                            <span class="tech-tag">Procurement</span>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                            <span class="skill-badge">PHP</span>
+                            <span class="skill-badge">Laravel</span>
+                            <span class="skill-badge">Livewire</span>
+                            <span class="skill-badge">FilamentPHP</span>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">Django</span>
+                            <span class="skill-badge">React</span>
+                            <span class="skill-badge">Inertia.js</span>
                         </div>
-                    </article>
-                    <article class="card reveal project-card">
-                        <p class="project-context">PIAAN / Levy collection</p>
-                        <div class="project-heading">
-                            <h3>PIAAN Levy Collection</h3>
-                            <span class="badge-ongoing">In development</span>
-                        </div>
-                        <p class="project-description">
-                            Developing a levy collection system for
-                            <span lang="ne">पेशागत बीमा अभिकर्ता संघ नेपाल</span>.
-                            Each level creates members, retains part of the levy
-                            as commission, and forwards the remainder to the
-                            next higher level.
+                    </div>
+                    <div class="reveal">
+                        <p
+                            style="
+                                font-size: 12px;
+                                color: var(--dim);
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                                font-family:
+                                    &quot;JetBrains Mono&quot;, monospace;
+                                margin-bottom: 14px;
+                            "
+                        >
+                            Databases &amp; Caching
                         </p>
-                        <div class="project-tags">
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">Inertia.js</span>
-                            <span class="tech-tag">React</span>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                            <span class="skill-badge">MySQL</span>
+                            <span class="skill-badge">Redis</span>
+                            <span class="skill-badge">Query Optimization</span>
+                            <span class="skill-badge">Cache Locking</span>
                         </div>
-                    </article>
-                    <article class="card reveal project-card">
-                        <p class="project-context">Studio Matrix / Marketing analytics</p>
-                        <div class="project-heading">
-                            <h3>First Look Games</h3>
-                            <a
-                                class="project-link"
-                                href="https://firstlookgames.com/"
-                                aria-label="Visit First Look Games"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >Visit site</a>
-                        </div>
-                        <p class="project-description">
-                            Enhanced and maintained reports for an iGaming
-                            marketing platform, worked on its WordPress
-                            integration, and fixed issues across the existing
-                            application.
+                    </div>
+                    <div class="reveal">
+                        <p
+                            style="
+                                font-size: 12px;
+                                color: var(--dim);
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                                font-family:
+                                    &quot;JetBrains Mono&quot;, monospace;
+                                margin-bottom: 14px;
+                            "
+                        >
+                            Real-time &amp; APIs
                         </p>
-                        <div class="project-tags">
-                            <span class="tech-tag">Reporting</span>
-                            <span class="tech-tag">WordPress</span>
-                            <span class="tech-tag">Integrations</span>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                            <span class="skill-badge">Laravel WebSockets</span>
+                            <span class="skill-badge">REST APIs</span>
+                            <span class="skill-badge">HTTP Pools</span>
+                            <span class="skill-badge">API Integration</span>
+                            <span class="skill-badge">Stripe</span>
+                            <span class="skill-badge">Telegram Bot API</span>
                         </div>
-                    </article>
-                    <article class="card reveal project-card">
-                        <p class="project-context">Studio Matrix / Property marketplace</p>
-                        <div class="project-heading">
-                            <h3>SnowOnly</h3>
-                            <a
-                                class="project-link"
-                                href="https://snowonly.com/"
-                                aria-label="Visit SnowOnly"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >Visit site</a>
-                        </div>
-                        <p class="project-description">
-                            Upgraded an established Laravel application for an
-                            international ski property marketplace, resolving
-                            framework compatibility issues during the migration.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">Framework upgrade</span>
-                        </div>
-                    </article>
-                    <article class="card reveal project-card">
-                        <p class="project-context">Studio Matrix / Operations</p>
-                        <div class="project-heading">
-                            <h3>PeakScale Ops</h3>
-                            <a
-                                class="project-link"
-                                href="https://peakscaleops.com/"
-                                aria-label="Visit PeakScale Ops"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >Visit site</a>
-                        </div>
-                        <p class="project-description">
-                            Integrated a Telegram bot into a Python/Django
-                            operations platform and implemented sign-in flows
-                            and authentication APIs, working with its existing
-                            checklist workflows where needed.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">Telegram Bot API</span>
-                        </div>
-                    </article>
-                    <article class="card reveal project-card">
-                        <p class="project-context">Studio Matrix / Delivery and booking</p>
-                        <div class="project-heading">
-                            <h3>Exotiq</h3>
-                            <a
-                                class="project-link"
-                                href="https://exotiq.online/"
-                                aria-label="Visit Exotiq"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >Visit site</a>
-                        </div>
-                        <p class="project-description">
-                            Added membership-level access and booking flows to a
-                            WordPress publication and print delivery platform,
-                            with Stripe payments connected across the relevant
-                            pages.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tech-tag">WordPress</span>
-                            <span class="tech-tag">Memberships</span>
-                            <span class="tech-tag">Stripe</span>
-                        </div>
-                    </article>
-                    <article class="card reveal project-card">
-                        <p class="project-context">Velox Labs / HR software</p>
-                        <div class="project-heading">
-                            <h3>Hajir HR</h3>
-                            <a
-                                class="project-link"
-                                href="https://hajirhr.com/"
-                                aria-label="Visit Hajir HR"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >Visit site</a>
-                        </div>
-                        <p class="project-description">
-                            Built a configurable payroll engine with overtime
-                            and break-time rules, automating salary calculations
-                            for more than 100 employees.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">Payroll</span>
-                            <span class="tech-tag">HR software</span>
-                        </div>
-                    </article>
-                    <article class="card reveal project-card">
-                        <p class="project-context">Crystal Solution / School ERP</p>
-                        <div class="project-heading">
-                            <h3>Crystal ERP</h3>
-                            <a
-                                class="project-link"
-                                href="https://thecrystalerp.com/"
-                                aria-label="Visit Crystal ERP"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >Visit site</a>
-                        </div>
-                        <p class="project-description">
-                            Modernized school ERP features for student management,
-                            fee collection, and library workflows, including
-                            payment tracking and automated fine calculations.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">ERP</span>
-                            <span class="tech-tag">Education</span>
-                        </div>
-                    </article>
-                    <article class="card reveal project-card">
-                        <p class="project-context">Independent project / Financial services</p>
-                        <div class="project-heading">
-                            <h3>somluitel.com.np</h3>
-                            <a
-                                class="project-link"
-                                href="https://somluitel.com.np"
-                                aria-label="Visit somluitel.com.np"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >Visit site</a>
-                        </div>
-                        <p class="project-description">
-                            Built a dynamic Laravel portfolio and blog for a
-                            financial professional, with posts, resources, a
-                            gallery, testimonials, contact features, and an
-                            insurance premium calculator. A FilamentPHP backend
-                            manages content and user interactions.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">FilamentPHP</span>
-                            <span class="tech-tag">Dynamic CMS</span>
-                        </div>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <section
+<section
             id="education"
             style="background: var(--surface); padding: 80px 0"
         >
             <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
                 <div class="reveal">
                     <p class="section-tag">Academic background</p>
-                    <h2 class="section-title">Education</h2>
+                    <h2 class="section-title"><span class="title-intro">Always <em>learning.</em></span><strong>Education</strong></h2>
                 </div>
                 <div
                     style="
@@ -1625,67 +1150,32 @@
                             >
                         </div>
                     </div>
-                    <div
-                        class="reveal"
-                        style="
-                            padding: 20px 0;
-                            border-top: 1px solid var(--border);
-                        "
-                    >
-                        <p
-                            style="
-                                font-size: 12px;
-                                color: var(--dim);
-                                text-transform: uppercase;
-                                letter-spacing: 0.1em;
-                                font-family:
-                                    &quot;JetBrains Mono&quot;, monospace;
-                                margin-bottom: 14px;
-                            "
-                        >
-                            Certifications
-                        </p>
-                        <div
-                            style="
-                                display: flex;
-                                align-items: center;
-                                gap: 12px;
-                            "
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="18"
-                                height="18"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="var(--accent)"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <circle cx="12" cy="8" r="6" />
-                                <path
-                                    d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"
-                                />
-                            </svg>
-                            <span style="color: var(--muted); font-size: 15px"
-                                >Docker Essentials: A Developer Introduction
-                                &mdash;
-                                <span style="color: var(--dim)"
-                                    >IBM SkillsBuild</span
-                                ></span
-                            >
+                    <div class="card certification-card reveal">
+                        <div class="certification-topline">
+                            <span>Certification</span>
+                            <span>01 / 01</span>
+                        </div>
+                        <div class="certification-main">
+                            <div class="certification-icon" aria-hidden="true">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="5" />
+                                    <path d="m8.7 11.8-1.2 9.3L12 18l4.5 3.1-1.2-9.3" />
+                                </svg>
+                            </div>
+                            <div class="certification-copy">
+                                <h3>Docker Essentials: <em>A Developer Introduction</em></h3>
+                                <p>IBM SkillsBuild</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="contact" style="padding: 80px 0">
+<section id="contact" style="padding: 80px 0">
             <div style="max-width: 1152px; margin: 0 auto; padding: 0 24px">
                 <div class="reveal" style="max-width: 580px">
                     <p class="section-tag">Get in touch</p>
-                    <h2 class="section-title">Let's Work Together</h2>
+                    <h2 class="section-title"><span class="title-intro">Have something in <em>mind?</em></span><strong>Let’s Work Together</strong></h2>
                     <p
                         style="
                             color: var(--muted);
@@ -1825,101 +1315,19 @@
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </a>
-                    <a
-                        href="https://github.com/dp-0"
-                        target="_blank"
-                        rel="noopener"
-                        class="card contact-row reveal"
-                        style="color: var(--text)"
-                    >
-                        <div class="contact-icon">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="var(--accent-light)"
-                            >
-                                <path
-                                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
-                                />
-                            </svg>
-                        </div>
+                    <a href="https://filament-sanchaya.dineshphuyel.com.np/" target="_blank" rel="noopener noreferrer" class="card contact-row reveal" style="color: var(--text)">
+                        <div class="contact-icon" aria-hidden="true">↗</div>
                         <div style="flex: 1">
-                            <p
-                                style="
-                                    font-size: 11px;
-                                    color: var(--dim);
-                                    text-transform: uppercase;
-                                    letter-spacing: 0.1em;
-                                    font-family:
-                                        &quot;JetBrains Mono&quot;, monospace;
-                                "
-                            >
-                                GitHub
-                            </p>
-                            <p
-                                style="
-                                    font-size: 16px;
-                                    color: var(--text);
-                                    margin-top: 3px;
-                                "
-                            >
-                                github.com/dp-0
-                            </p>
+                            <p class="contact-label">Explore</p>
+                            <p class="contact-value">Filament Sanchaya project site</p>
                         </div>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="var(--dim)"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
+                        <span class="contact-arrow" aria-hidden="true">↗</span>
                     </a>
                 </div>
             </div>
         </section>
-
-        <footer
-            style="
-                border-top: 1px solid var(--border);
-                padding: 28px 0;
-                background: var(--bg);
-            "
-        >
-            <div
-                style="
-                    max-width: 1152px;
-                    margin: 0 auto;
-                    padding: 0 24px;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 12px;
-                "
-            >
-                <p style="color: var(--dim); font-size: 14px">
-                    Dinesh Phuyel &mdash; PHP / Laravel Developer
-                </p>
-                <p
-                    style="
-                        color: var(--dim);
-                        font-size: 13px;
-                        font-family: &quot;JetBrains Mono&quot;, monospace;
-                    "
-                >
-                    Kathmandu, Nepal &middot; 2026
-                </p>
-            </div>
-        </footer>
-
-        <script src="js/script.js"></script>
-    </body>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><p>© 2026 Dinesh Phuyel · Built with care in Kathmandu.</p><a href="#hero">Back to top ↑</a></div></footer>
+<script src="js/script.js"></script>
+</body>
 </html>
